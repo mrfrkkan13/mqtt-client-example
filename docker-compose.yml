@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  mqtt-client:
+    build: .
+    container_name: mqtt-client
+    restart: unless-stopped
+    environment:
+      - MQTT_BROKER=${MQTT_BROKER:-mqtt://test.mosquitto.org:1883}
+      - MQTT_TOPIC=${MQTT_TOPIC:-eteration/ekmek_arasi/mqtt/test}
